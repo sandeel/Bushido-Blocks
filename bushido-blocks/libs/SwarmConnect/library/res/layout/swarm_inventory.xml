@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/swarm_background"
+    >
+    
+    <include layout="@layout/swarm_header" />
+    
+    <LinearLayout
+    	android:orientation="horizontal"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	>
+    	<TextView
+    		android:id="@+id/coins"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:layout_weight="1"
+    		android:text="@string/inv_coins"
+    		style="@style/LightShadow.DarkText"
+    		/>
+    </LinearLayout>
+    	
+    <ListView
+    	android:id="@+id/list"
+    	android:layout_width="fill_parent"
+    	android:layout_height="1dip"
+    	android:layout_weight="1"
+    	android:divider="#888888"
+    	android:dividerHeight="1px"
+    	android:cacheColorHint="#00000000"
+    	/>
+        	
+</LinearLayout>

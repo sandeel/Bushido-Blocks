@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:padding="9dip" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <com.swarmconnect.ui.AsyncImageView
+            android:id="@+id/pic"
+            android:layout_width="40dip"
+            android:layout_height="40dip" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingLeft="9dip" >
+
+            <TextView
+                style="@style/LightShadow.GreyText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:text="Recommended for you"
+                android:textSize="14dip" />
+
+            <TextView
+                android:id="@+id/name"
+                style="@style/LightShadow.DarkText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textSize="18dip"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/download"
+            style="@style/BlackShadow.WhiteText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/purchase_popup_buy_button"
+            android:gravity="center"
+            android:padding="8dip"
+            android:text="@string/pur_download"
+            android:textSize="15dip"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>

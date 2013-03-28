@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:background="#66b0e5" />
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/header_background"
+        android:gravity="right|center_vertical"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dip"
+            android:layout_marginLeft="10dip"
+            android:layout_marginTop="5dip"
+            android:src="@drawable/swarm_logo" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:padding="7dip"
+            android:src="@drawable/swarm_home" />
+
+        <ImageButton
+            android:id="@+id/close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:padding="7dip"
+            android:src="@drawable/swarm_quit" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:background="#165683" />
+
+    <LinearLayout
+        android:id="@+id/sheader"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#333333"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="5dip" >
+
+        <ImageView
+            android:id="@+id/sheader_icon"
+            android:layout_width="16dip"
+            android:layout_height="wrap_content"
+            android:scaleType="centerInside" />
+
+        <TextView
+            android:id="@+id/sheader_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dip"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="#dddddd" />
+
+        <LinearLayout
+            android:id="@+id/sheader_btn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dip"
+            android:background="@drawable/sub_header_button"
+            android:paddingBottom="4dip"
+            android:paddingLeft="5dip"
+            android:paddingRight="5dip"
+            android:paddingTop="4dip" >
+
+            <TextView
+                android:id="@+id/sheader_btn1_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hea_my_scores"
+                android:textColor="#cccccc"
+                android:textSize="11dip" />
+
+            <TextView
+                android:id="@+id/sheader_btn1_dropdown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dip"
+                android:text="@string/hea_down_tri"
+                android:textColor="#999999"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/sheader_btn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/sub_header_button"
+            android:paddingBottom="4dip"
+            android:paddingLeft="5dip"
+            android:paddingRight="5dip"
+            android:paddingTop="4dip" >
+
+            <TextView
+                android:id="@+id/sheader_btn2_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hea_today"
+                android:textColor="#cccccc"
+                android:textSize="11dip" />
+
+            <TextView
+                android:id="@+id/sheader_btn2_dropdown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dip"
+                android:text="@string/hea_down_tri"
+                android:textColor="#999999"
+                android:textSize="10sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:background="#777777" />
+
+    <TextView
+        android:id="@+id/offline_error"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/offline_error_background"
+        android:gravity="center"
+        android:paddingBottom="2dip"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip"
+        android:paddingTop="2dip"
+        android:text="@string/hea_offline"
+        android:textColor="#000000"
+        android:textSize="11dip" />
+
+    <View
+        android:id="@+id/offline_error_underline"
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:background="#7f6b12" />
+
+    <LinearLayout
+        android:id="@+id/recommended_app_holder"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:id="@+id/recommended_app_holder_underline"
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:background="#777777" />
+
+</LinearLayout>

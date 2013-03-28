@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/swarm_background" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <include layout="@layout/swarm_header" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="15dip" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="10dip" >
+
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dip"
+                    android:src="@drawable/swarm_friend_blue" />
+
+                <TextView
+                    android:id="@+id/username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:shadowColor="#cccccc"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:shadowRadius="1"
+                    android:text="@string/username"
+                    android:textColor="#222222"
+                    android:textSize="18dip"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:layout_marginBottom="10dip"
+                android:layout_marginTop="10dip"
+                android:background="#666666" />
+
+            <LinearLayout
+                android:id="@+id/upgrade_box"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/LightShadow.DarkText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="11dip"
+                    android:text="@string/set_username_benefits" />
+
+                <Button
+                    android:id="@+id/upgrade"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dip"
+                    android:layout_marginTop="6dip"
+                    android:padding="9dip"
+                    android:background="@drawable/grey_button"
+                    android:shadowColor="#ffffff"
+                    android:shadowDx="1.0"
+                    android:shadowDy="1.0"
+                    android:shadowRadius="0.5"
+                    android:text="@string/set_select_username"
+                    android:textColor="#000000"
+                    android:textSize="16dip"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/set_password_box"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/password_error"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right|bottom"
+                    android:textColor="@color/error_text"
+                    android:textSize="12dp" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        style="@style/LightShadow.DarkText"
+                        android:layout_width="130dip"
+                        android:layout_height="wrap_content"
+                        android:text="@string/set_current_pass" />
+
+                    <EditText
+                        android:id="@+id/current_password"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="flagNoExtractUi"
+                        android:inputType="textPassword"
+                        android:singleLine="true" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        style="@style/LightShadow.DarkText"
+                        android:layout_width="130dip"
+                        android:layout_height="wrap_content"
+                        android:text="@string/set_new_pass" />
+
+                    <EditText
+                        android:id="@+id/new_password"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="flagNoExtractUi"
+                        android:inputType="textPassword"
+                        android:singleLine="true" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        style="@style/LightShadow.DarkText"
+                        android:layout_width="130dip"
+                        android:layout_height="wrap_content"
+                        android:text="@string/set_confirm_pass" />
+
+                    <EditText
+                        android:id="@+id/confirm_password"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="flagNoExtractUi"
+                        android:inputType="textPassword"
+                        android:singleLine="true" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/set_pass"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dip"
+                    android:layout_marginTop="6dip"
+                    android:background="@drawable/grey_button"
+                    android:padding="9dip"
+                    android:shadowColor="#ffffff"
+                    android:shadowDx="1.0"
+                    android:shadowDy="1.0"
+                    android:shadowRadius="0.5"
+                    android:text="@string/set_change_pass"
+                    android:textColor="#000000"
+                    android:textSize="16dip"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/password_box"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/LightShadow.DarkText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dip"
+                    android:text="@string/set_change_pass_details" />
+
+                <Button
+                    android:id="@+id/change_pass"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dip"
+                    android:layout_marginTop="6dip"
+                    android:background="@drawable/grey_button"
+                    android:padding="9dip"
+                    android:shadowColor="#ffffff"
+                    android:shadowDx="1.0"
+                    android:shadowDy="1.0"
+                    android:shadowRadius="0.5"
+                    android:text="@string/set_change_pass"
+                    android:textColor="#000000"
+                    android:textSize="16dip"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:layout_marginBottom="10dip"
+                android:layout_marginTop="10dip"
+                android:background="#666666" />
+
+            <TextView
+                style="@style/LightShadow.DarkText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="11dip"
+                android:text="@string/set_push_details" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/LightShadow.DarkText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/set_push_enabled" />
+
+                <CheckBox
+                    android:id="@+id/notifications"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:layout_marginBottom="10dip"
+                android:layout_marginTop="10dip"
+                android:background="#666666" />
+
+            <Button
+                android:id="@+id/logout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dip"
+                android:background="@drawable/grey_button"
+                android:padding="11dip"
+                android:shadowColor="#ffffff"
+                android:shadowDx="1.0"
+                android:shadowDy="1.0"
+                android:shadowRadius="0.5"
+                android:text="@string/set_logout"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

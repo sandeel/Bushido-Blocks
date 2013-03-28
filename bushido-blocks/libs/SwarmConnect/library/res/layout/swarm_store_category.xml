@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/swarm_background"
+    >
+    
+    <include layout="@layout/swarm_header" />
+    	
+    <View
+    	android:layout_width="fill_parent"
+    	android:layout_height="1px"
+    	android:background="#000000"
+    	/>
+    
+    <LinearLayout
+    	android:id="@+id/footer"
+    	android:orientation="horizontal"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:background="@drawable/footer_background"
+    	android:gravity="center_vertical"
+    	android:paddingLeft="12dip"
+    	>
+    	<ImageView
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:src="@drawable/swarm_coin"
+    		android:layout_marginLeft="4dip"
+    		/>
+    	<TextView
+	    	android:id="@+id/coins"
+	    	android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"
+	    	android:layout_weight="1"
+	    	android:paddingLeft="3dip"
+	    	android:textSize="18dip"
+	    	android:textStyle="bold"
+	    	android:text=""
+	    	android:gravity="left"
+		    style="@style/LightShadow.DarkText"
+	    	/>
+		<TextView
+		   	android:id="@+id/get_coins"
+		   	android:layout_width="wrap_content"
+		   	android:layout_height="wrap_content"
+		   	android:text="@string/sto_get_coins"
+		   	android:textStyle="bold"
+		   	android:textColor="#ffffff"
+		   	android:textSize="13dip"
+		   	android:shadowColor="#000000"
+		   	android:shadowDx="1.0"
+		   	android:shadowDy="1.0"
+		   	android:shadowRadius="0.5"
+		   	android:paddingLeft="9dip"
+		   	android:paddingRight="9dip"
+		   	android:layout_marginRight="4dip"
+		   	android:layout_marginTop="3dip"
+		   	android:layout_marginBottom="4dip"
+		   	/>
+    </LinearLayout>
+    
+    <View
+    	android:layout_width="fill_parent"
+    	android:layout_height="1px"
+    	android:background="#bdbdbd"
+    	/>
+    
+    <ListView
+    	android:id="@+id/list"
+    	android:layout_width="fill_parent"
+    	android:layout_height="1dip"
+    	android:layout_weight="1"
+    	android:divider="#888888"
+    	android:dividerHeight="1px"
+    	android:cacheColorHint="#00000000"
+    	/>
+        	
+</LinearLayout>

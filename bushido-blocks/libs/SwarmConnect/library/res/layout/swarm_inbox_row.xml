@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="5dip"
+    android:paddingBottom="5dip"
+    android:paddingRight="10dip"
+    android:paddingLeft="10dip"
+    >
+    
+    <ImageView 
+    	android:id="@+id/profile_pic"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="4dip"
+		android:layout_marginRight="10dip"
+		android:src="@drawable/swarm_friend_blue" />
+    
+    <LinearLayout
+    	android:orientation="vertical"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:layout_weight="1"
+    	android:layout_marginRight="10dip"
+    	>
+    	<TextView
+			android:id="@+id/username"
+		    android:layout_width="fill_parent" 
+		    android:layout_height="wrap_content"
+		    android:text=""
+		    android:textSize="18dip"
+		    android:textStyle="bold"
+    		style="@style/LightShadow.DarkText"
+		    />
+    	<TextView
+			android:id="@+id/message"
+		    android:layout_width="fill_parent" 
+		    android:layout_height="wrap_content"
+		    android:text=""
+		    android:textSize="12dip"
+		    android:ellipsize="end"
+		    android:singleLine="true"
+    		style="@style/LightShadow.DarkText"
+		    />
+    </LinearLayout>
+    
+    <ImageView 
+    	android:id="@+id/mail"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_vertical"
+		android:src="@drawable/swarm_mail_grey" />
+    
+</LinearLayout>

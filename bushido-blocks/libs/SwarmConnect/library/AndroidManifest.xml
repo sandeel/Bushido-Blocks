@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.swarmconnect" >
+      
+    <uses-sdk android:minSdkVersion="3" />
+    
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    
+	<!-- Required if using the Swarm Store features. Not required otherwise. -->
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" /> 
+
+    <application>
+        <activity android:name="com.swarmconnect.SwarmMainActivity"
+        	android:configChanges="orientation|keyboardHidden"
+        	android:theme="@android:style/Theme.NoTitleBar"
+        	android:windowSoftInputMode="stateHidden"
+            android:label="Swarm" />
+        
+        <service android:name="com.swarmconnect.NotificationService" android:process=":swarm" />
+    </application>
+</manifest>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/popup_background_rect"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/popup_header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/popup_header_background"
+        android:gravity="center_vertical"
+        android:paddingBottom="3dip"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip"
+        android:paddingTop="3dip" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="18dip"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:scaleType="fitStart"
+            android:src="@drawable/swarm_logo" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/popup_top_half"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dip"
+        android:paddingRight="20dip"
+        android:paddingTop="20dip">
+
+        <com.swarmconnect.ui.AsyncImageView
+            android:id="@+id/image"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dip" />
+
+        <TextView
+            android:id="@+id/desc"
+            style="@style/LightGreyText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@id/image"
+            android:text="@string/pur_recommended_for_you"
+            android:textSize="18dip" />
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/DarkText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/desc"
+            android:layout_toRightOf="@id/image"
+            android:layout_marginTop="-2dip"
+            android:textSize="22dip"
+            android:textStyle="bold" />
+        
+        <View 
+        	android:layout_width="175dip"
+        	android:layout_height="1dip"
+        	android:layout_gravity="center"
+        	android:background="#a9d0eb"
+        	android:layout_below="@id/title"
+        	android:layout_centerHorizontal="true"
+        	android:layout_marginTop="20dip"
+			/>
+        
+    </RelativeLayout>
+
+     
+    <LinearLayout
+        android:id="@+id/popup_bottom_half"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="20dip"
+        android:paddingRight="20dip"
+        android:paddingBottom="10dip"
+        android:paddingTop="10dip" >
+
+        <TextView
+            android:id="@+id/download"
+            style="@style/BlackShadow.WhiteText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dip"
+            android:layout_weight="1"
+            android:background="@drawable/purchase_popup_buy_button"
+            android:gravity="center"
+            android:padding="10dip"
+            android:text="@string/pur_download"
+            android:textSize="18dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/cancel"
+            style="@style/BlackShadow.WhiteText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/purchase_popup_cancel_button"
+            android:paddingTop="10dip"
+            android:paddingBottom="10dip"
+            android:paddingLeft="15dip"
+            android:paddingRight="15dip"
+            android:text="@string/pur_no_thanks"
+            android:textSize="18dip"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>

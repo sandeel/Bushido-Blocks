@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/swarm_background"
+    android:orientation="vertical" >
+
+    <include layout="@layout/swarm_header" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        >
+        <LinearLayout
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical"
+	        android:padding="25dp" >
+	
+	        <LinearLayout
+	            android:id="@+id/tapjoy"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/coin_provider_button"
+	            android:gravity="center_vertical|left"
+	            android:orientation="vertical"
+	            android:padding="20dp" >
+	
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="@string/coi_tapjoy"
+	                android:textColor="#ffffff"
+	                android:textSize="25dp"
+	                android:textStyle="bold" />
+	
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="@string/coi_tapjoy_details" />
+	        </LinearLayout>
+	        
+	        <LinearLayout
+	            android:id="@+id/paypal"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_marginTop="20dp"
+	            android:background="@drawable/coin_provider_button"
+	            android:gravity="center_vertical|left"
+	            android:orientation="vertical"
+	            android:padding="20dp" >
+	
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="@string/coi_paypal"
+	                android:textColor="#ffffff"
+	                android:textSize="25dp"
+	                android:textStyle="bold" />
+	
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="@string/coi_paypal_details" />
+	        </LinearLayout>
+	
+	    
+		    <LinearLayout
+		            android:id="@+id/wallet"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="20dp"
+		            android:background="@drawable/coin_provider_button"
+		            android:gravity="center_vertical|left"
+		            android:orientation="vertical"
+		            android:padding="20dp" >
+		
+		            <TextView
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:text="@string/coi_wallet"
+		                android:textColor="#ffffff"
+		                android:textSize="25dp"
+		                android:textStyle="bold" />
+		
+		            <TextView
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:text="@string/coi_wallet_details" />
+		    </LinearLayout>
+		
+	    </LinearLayout>
+        
+    </ScrollView>
+</LinearLayout>

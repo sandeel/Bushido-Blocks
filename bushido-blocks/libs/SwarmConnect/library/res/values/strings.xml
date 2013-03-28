@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    
+    <!-- General and/or used on multiple screen -->
+    <string name="username">Username</string>
+    <string name="terms">Terms and Conditions</string>
+    <string name="login">Login</string>
+    <string name="password">Password:</string>
+    <string name="email">Email:</string>
+    <string name="create_account">Create Account</string>    
+    <string name="use_existing_account">Use Existing Account</string>
+    <string name="confirm_pass">Confirm Password:</string>
+    <string name="achievement_unlocked">Achievement unlocked!</string>
+    <string name="accepted_friend_request">Accepted your friend request!</string>
+    <string name="wants_to_be_friend">Wants to be your friend!</string>
+    <string name="you_earned_coins">You earned coins!</string>
+    <string name="coins_added_to_account">%1$d coins added to your account</string>
+    <string name="score_submitted">Score submitted!</string>
+    <string name="you_are_ranked_num">You are ranked #</string>
+    <string name="message_from_username">Message from %1$s</string>
+    <string name="user_came_online">%1$s came online</string>
+    <string name="went_offline">Went offline</string>
+    <string name="playing_app_name">Playing %1$s</string>
+    <string name="item_purchased">Item purchased!</string>
+    <string name="facebook_error">Facebook error: </string> 						<!-- trailing space is intentional -->
+    <string name="one_new_message">1 new message</string>
+    <string name="num_new_messages">%1$d new messages</string>
+    <string name="x_of_y_completed">%1$d / %2$d completed</string>
+    <string name="one_friend_request">1 friend request</string>
+    <string name="num_friend_requests">%1$d friend requests</string>
+    <string name="username_required">Username required</string>
+    <string name="account_creation_failed">Account creation failed</string>
+    <string name="friend_request_sent">Friend request sent</string>
+    <string name="error_adding_friend">Error when adding friend</string>
+    <string name="user_not_found">User not found</string>
+    <string name="friends">Friends</string>
+    <string name="friend_removed">Friend removed</string>
+    <string name="friend_confirmed">Friend confirmed</string>
+    <string name="request_failed">Request failed</string>
+    <string name="online_playing_app_name">Online: Playing %1$s</string>
+    <string name="offline">Offline</string>
+    <string name="remove_friend">Remove Friend</string>
+    <string name="want_to_remove_username_from_friends_list">Do you want to remove %1$s from your friends list?</string>
+    <string name="remove">Remove</string>
+    <string name="cancel">Cancel</string>
+    <string name="enter_valid_email">Please enter a valid email address.</string>
+    <string name="enter_your_email">Please enter your email address.</string>
+    <string name="password_changed">Password changed</string>
+    <string name="error_saving_new_pass">Error saving new password</string>
+    <string name="passwords_do_not_match">New passwords do not match</string>
+    <string name="all_fields_required">All fields are required</string>
+    <string name="settings">Settings</string>
+    <string name="your_score_int">Your score: %1$d</string>
+    <string name="your_score_string">Your score: %1$s</string>
+    <string name="logging_in">Logging in...</string>
+    <string name="loading">Loading...</string>
+    <string name="achievements">Achievements</string>
+    <string name="store">Store</string>
+    <string name="leaderboard">Leaderboard</string>
+    <string name="leaderboards">Leaderboards</string>
+    <string name="get_more_games">Get More Games!</string>
+    <string name="messages">Messages</string>
+    <string name="okay">OK</string>
+    <string name="offers_by_tapjoy">Offers by Tapjoy</string>
+    <string name="offline_guest">OfflineGuest</string>
+    
+    <!-- Account -->
+    <string name="acc_username">Username:</string>
+    <string name="acc_select_username">Select Username:</string>
+    <string name="acc_last_things">Just a few last things...</string>
+    <string name="acc_friends">Play with friends</string>
+    <string name="acc_friends_details">Compete or play co-op!</string>
+    <string name="acc_achievements">Earn achievements</string>
+    <string name="acc_achievements_details">Show off your skills to the world!</string>
+    <string name="acc_chat">Chat with players</string>
+    <string name="acc_chat_details">Real-time chat with other gamers!</string>
+    <string name="acc_guest">Play as Guest</string>
+    <string name="acc_claim">Claim your username!</string>
+
+    <!-- Friends -->
+    <string name="fri_get_friends">\n\n\nYou don\'t have any Swarm friends yet! You can add them by name at the bottom.</string>
+    <string name="fri_add_a_friend">Add a Friend...</string>
+    
+    <!--  Inbox -->
+    <string name="inb_get_messages">\n\n\nYou don\'t have any Swarm messages yet!  Make some friends and start chatting.</string>
+    <string name="inb_delete_thread">Delete Thread?</string>
+    <string name="inb_delete_messages">Delete messages from %1$s?</string>
+    <string name="inb_delete">Delete</string>
+    <string name="inb_unable_to_send_message">Unable to send message.</string>
+    <string name="inb_conversation_with_username">Conversation with %1$s</string>
+    
+    <!-- Coins -->
+    <string name="coi_tapjoy">TapJoy</string>
+    <string name="coi_tapjoy_details">Try free games to get coins.</string>
+    <string name="coi_paypal">Paypal</string>
+    <string name="coi_paypal_details">Purchase coins with Paypal.</string>
+    <string name="coi_wallet">Google Wallet</string>
+    <string name="coi_wallet_details">Purchase coins with Google Wallet.</string>
+    <string name="coi_select_coin_provider">Select a coin provider</string>
+    <string name="coi_purchase_with_paypal">Purchase securely with Paypal</string>
+    <string name="coi_purchase_with_wallet">Purchase securely with Google Wallet</string>
+    <string name="coi_thanks">Thank You!\n\nCoins can take up to 24 hours to show in your account (usually a few minutes).</string>
+    
+    <!-- Header -->
+    <string name="hea_my_scores">my scores</string>
+    <string name="hea_down_tri">▼</string>
+    <string name="hea_today">today</string>
+    <string name="hea_offline">You are offline. Some data may be unavailable.</string>
+    
+    <!-- Inventory -->
+    <string name="inv_coins">Coins: %1$d</string>
+    
+    <!-- Load More -->
+    <string name="loa_load_next_25">Load Next 25</string>
+    
+    <!-- Login -->
+    <string name="log_select_account">Select an Account</string>
+    <string name="log_username_or_email">Username or Email</string>
+    <string name="log_lost_pass">Lost Password? </string> <!-- trailing space is intentional -->
+    <string name="log_create_account">Create New Account</string>
+    
+    <!-- Lost Password -->
+    <string name="los_instructions">Can\'t remember your password? Not a problem! Just enter your email address below, and we\'ll send you a new password!</string>
+    <string name="los_reset_pass">Reset Password</string>
+    <string name="los_sent_pass">We\'ve sent you a new password. Check your email!</string>
+    
+    <!-- Purchase Popup -->
+    <string name="pur_cost">Cost </string> <!-- trailing space is intentional -->
+    <string name="pur_purchase">Purchase</string>
+    <string name="pur_download">Download</string>
+    <string name="pur_recommended_for_you">Recommended for you</string>
+    <string name="pur_no_thanks">No Thanks</string>
+    <string name="pur_need_more_coins">You need more coins to purchase this. Tap below to get more coins!</string>
+	<string name="pur_get_coins">Get Coins</string>
+    <string name="pur_purchase_for_price_coins">Purchase for %1$d coins</string>
+	<string name="pur_purchasing_title">Purchasing %1$s</string>
+    
+    <!-- Settings -->
+    <string name="set_username_benefits">By selecting your username, you will show up in leaderboards and save your data in the cloud, so you can access it from anywhere.</string>
+    <string name="set_select_username">Select Username</string>
+    <string name="set_current_pass">Current Password</string>
+    <string name="set_new_pass">New Password</string>
+    <string name="set_confirm_pass">Confirm Password</string>
+    <string name="set_change_pass">Change Password</string>
+    <string name="set_change_pass_details">You can change your password below.</string>
+    <string name="set_push_details">Push Notifications are a way for applications to notify you of important things in real-time.</string>
+    <string name="set_push_enabled">Push Enabled:</string>
+    <string name="set_logout">Logout</string>
+    
+    <!-- Store -->
+    <string name="sto_get_coins">Get More Coins</string>
+    <string name="sto_purchase_canceled">Purchase Canceled</string>
+    <string name="sto_no_coins">Purchase Failed: Not enough coins</string>
+    <string name="sto_invalid_store">Purchase Failed: Invalid store</string>
+    <string name="sto_invalid_item">Purchase Failed: Invalid item</string>
+    <string name="sto_failed_other">Purchase Failed</string>
+    <string name="sto_no_internet">Purchase Failed: Network unavailable</string>
+    <string name="sto_already_purchased">Purchase Failed: You already own that item</string>
+    <string name="sto_num_items">(%1$d items)</string>
+    
+    <!-- Leaderboards -->
+    <string name="lea_my_scores">My Scores</string>
+    <string name="lea_friends_scores">Friends\' Scores</string>
+    <string name="lea_top_scores">Top Scores</string>
+    
+    
+</resources>

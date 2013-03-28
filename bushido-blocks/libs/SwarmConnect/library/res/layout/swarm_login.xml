@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/swarm_background"
+    android:orientation="vertical" >
+
+    <include layout="@layout/swarm_header_external" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="20dip"
+            android:paddingRight="20dip"
+            android:paddingTop="20dip" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dip"
+                android:gravity="top"
+                android:orientation="horizontal"
+                android:paddingLeft="2dip"
+                android:paddingRight="2dip" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <ImageButton
+                        android:id="@+id/swarm_login"
+                        android:layout_width="55dip"
+                        android:layout_height="55dip"
+                        android:background="@null"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/swarm_icon" />
+
+                    <com.swarmconnect.ui.TriangleView
+                        android:layout_width="fill_parent"
+                        android:layout_height="10dip"
+                        android:layout_marginLeft="12dip"
+                        android:layout_marginRight="12dip"
+                        android:layout_marginTop="8dip"
+                        android="@+id/triangle" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:id="@+id/facebook_login"
+                    android:layout_width="55dip"
+                    android:layout_height="55dip"
+                    android:background="@null"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/swarm_facebook" />
+
+                <View
+                    android:layout_width="0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:id="@+id/twitter_login"
+                    android:layout_width="55dip"
+                    android:layout_height="55dip"
+                    android:background="@null"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/swarm_twitter" />
+
+                <View
+                    android:layout_width="0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:id="@+id/google_login"
+                    android:layout_width="55dip"
+                    android:layout_height="55dip"
+                    android:background="@null"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/swarm_google" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="2dip"
+                android:layout_marginRight="2dip"
+                android:background="#aaaaaa" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dip"
+                android:orientation="horizontal"
+                android:paddingBottom="2dip"
+                android:paddingLeft="2dip" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:gravity="bottom"
+                    android:text="Username or Email:"
+                    android:textColor="#666666"
+                    android:textSize="12dp" />
+
+                <View
+                    android:layout_width="1px"
+                    android:layout_height="1px"
+                    android:layout_weight="1"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/username_error"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:gravity="right|bottom"
+                    android:paddingBottom="3dip"
+                    android:paddingLeft="8dip"
+                    android:paddingRight="8dip"
+                    android:paddingTop="3dip"
+                    android:textColor="@color/error_text"
+                    android:textSize="12dp"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/username"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dip"
+                android:imeOptions="flagNoExtractUi"
+                android:inputType="textNoSuggestions"
+                android:singleLine="true" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="2dip"
+                android:paddingLeft="2dip" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:gravity="bottom"
+                    android:text="Password:"
+                    android:textColor="#666666"
+                    android:textSize="12dp" />
+
+                <View
+                    android:layout_width="1px"
+                    android:layout_height="1px"
+                    android:layout_weight="1"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/lost_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:gravity="right|bottom"
+                    android:text="Lost Password? "
+                    android:textColor="#333333"
+                    android:textSize="12dp"
+                    android:textStyle="italic" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dip"
+                android:imeOptions="flagNoExtractUi"
+                android:inputType="textPassword"
+                android:singleLine="true" />
+
+            <Button
+                android:id="@+id/login"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dip"
+                android:layout_marginTop="11dip"
+                android:background="@drawable/blue_button"
+                android:padding="9dip"
+                android:shadowColor="#000000"
+                android:shadowDx="1.0"
+                android:shadowDy="1.0"
+                android:shadowRadius="0.5"
+                android:text="Login"
+                android:textColor="#ffffff"
+                android:textSize="16dip"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dip"
+                android:layout_marginTop="5dip"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <View
+                    android:layout_width="0dip"
+                    android:layout_height="1px"
+                    android:layout_marginLeft="2dip"
+                    android:layout_weight="1"
+                    android:background="#aaaaaa" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dip"
+                    android:layout_marginRight="8dip"
+                    android:text="OR"
+                    android:textColor="#666666"
+                    android:textSize="12dip" />
+
+                <View
+                    android:layout_width="0dip"
+                    android:layout_height="1px"
+                    android:layout_marginRight="2dip"
+                    android:layout_weight="1"
+                    android:background="#aaaaaa" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/create"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dip"
+                android:background="@drawable/green_button"
+                android:padding="11dip"
+                android:shadowColor="#000000"
+                android:shadowDx="1.0"
+                android:shadowDy="1.0"
+                android:shadowRadius="0.5"
+                android:text="Create New Account"
+                android:textColor="#ffffff"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/guest"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dip"
+                android:background="@drawable/grey_button"
+                android:padding="11dip"
+                android:shadowColor="#ffffff"
+                android:shadowDx="1.0"
+                android:shadowDy="1.0"
+                android:shadowRadius="0.5"
+                android:text="Play as Guest"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
