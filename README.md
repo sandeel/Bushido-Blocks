@@ -2,6 +2,7 @@
 
 ##Description
 A fast-paced block slicing puzzle game inspired by block-bashing games such as Bejeweled, Diamond Dash and Tap Blox.
+Google Play: https://play.google.com/store/apps/details?id=com.me.drop&hl=en
 
 ##Rules
 Tap matches of three or more blocks to slice them with your katana. The more blocks you can slice in one go, the more time you gain on the clock. Special blocks eliminate whole rows of blocks but don't give you any extra time, so use them wisely.
