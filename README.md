@@ -2,6 +2,7 @@
 
 ##Description
 A fast-paced block slicing puzzle game inspired by block-bashing games such as Bejeweled, Diamond Dash and Tap Blox.
+
 Google Play: https://play.google.com/store/apps/details?id=com.me.drop&hl=en
 
 ##Rules
