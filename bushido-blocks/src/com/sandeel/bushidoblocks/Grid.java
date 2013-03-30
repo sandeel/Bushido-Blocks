@@ -111,9 +111,9 @@ public class Grid {
                 
         for (GridSpace space : gridSpaces) {
             if (space.hasBlock()) {
-                if (space.getBlock().getColour() == "SUPER_HORIZONTAL"
-                    || space.getBlock().getColour() == "SUPER_VERTICAL"
-                    || space.getBlock().getColour() == "SUPER_2WAYS") {
+                if (space.getBlock().getColour() == COLOURS.SUPER_HORIZONTAL
+                    || space.getBlock().getColour() == COLOURS.SUPER_VERTICAL
+                    || space.getBlock().getColour() == COLOURS.SUPER_2WAYS) {
                     return true;
                 }
             }
@@ -166,7 +166,7 @@ public class Grid {
     }
     
     /* get a block's matches */
-    public HashSet<GridSpace> getMatches (int x, int y, String colour, HashSet<GridSpace> matches) {
+    public HashSet<GridSpace> getMatches (int x, int y, COLOURS colour, HashSet<GridSpace> matches) {
         
         GridSpace space = getGridSpace(x,y);
         
@@ -178,11 +178,11 @@ public class Grid {
             return matches;
         }
         
-        if (space.hasBlock() && space.getBlock().getColour().equals(colour) && !matches.contains(space)) {
+        if (space.hasBlock() && space.getBlock().getColour() == colour && !matches.contains(space)) {
             matches.add(space);
         }
         
-        if (space.hasGridSpaceLeft() && space.getGridSpaceLeft().hasBlock() && !matches.contains(space.getGridSpaceLeft()) && space.getGridSpaceLeft().getBlock().getColour().equals(colour)) {
+        if (space.hasGridSpaceLeft() && space.getGridSpaceLeft().hasBlock() && !matches.contains(space.getGridSpaceLeft()) && space.getGridSpaceLeft().getBlock().getColour() == colour) {
             for (GridSpace matchedSpace : getMatches(space.getGridSpaceLeft().getX(), space.getGridSpaceLeft().getY(), colour, matches)) {
                 if (!matches.contains(matchedSpace)) {
                     matches.add(matchedSpace);
@@ -190,7 +190,7 @@ public class Grid {
             }
         }
         
-        if (space.hasGridSpaceRight() && space.getGridSpaceRight().hasBlock() && !matches.contains(space.getGridSpaceRight()) && space.getGridSpaceRight().getBlock().getColour().equals(colour)) {
+        if (space.hasGridSpaceRight() && space.getGridSpaceRight().hasBlock() && !matches.contains(space.getGridSpaceRight()) && space.getGridSpaceRight().getBlock().getColour() == colour) {
             for (GridSpace matchedSpace : getMatches(space.getGridSpaceRight().getX(), space.getGridSpaceRight().getY(), colour, matches)) {
                 if (!matches.contains(matchedSpace)) {
                     matches.add(matchedSpace);
@@ -198,7 +198,7 @@ public class Grid {
             }
         }
         
-        if (space.hasGridSpaceAbove() && space.getGridSpaceAbove().hasBlock() && !matches.contains(space.getGridSpaceAbove()) && space.getGridSpaceAbove().getBlock().getColour().equals(colour)) {
+        if (space.hasGridSpaceAbove() && space.getGridSpaceAbove().hasBlock() && !matches.contains(space.getGridSpaceAbove()) && space.getGridSpaceAbove().getBlock().getColour() == colour) {
             for (GridSpace matchedSpace : getMatches(space.getGridSpaceAbove().getX(), space.getGridSpaceAbove().getY(), colour, matches)) {
                 if (!matches.contains(matchedSpace)) {
                     matches.add(matchedSpace);
@@ -206,7 +206,7 @@ public class Grid {
             }
         } 
         
-        if (space.hasGridSpaceBelow() && space.getGridSpaceBelow().hasBlock() && !matches.contains(space.getGridSpaceBelow()) && space.getGridSpaceBelow().getBlock().getColour().equals(colour)) {
+        if (space.hasGridSpaceBelow() && space.getGridSpaceBelow().hasBlock() && !matches.contains(space.getGridSpaceBelow()) && space.getGridSpaceBelow().getBlock().getColour() == colour) {
             for (GridSpace matchedSpace : getMatches(space.getGridSpaceBelow().getX(), space.getGridSpaceBelow().getY(), colour, matches)) {
                 if (!matches.contains(matchedSpace)) {
                     matches.add(matchedSpace);

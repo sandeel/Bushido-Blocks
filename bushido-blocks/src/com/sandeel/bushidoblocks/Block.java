@@ -27,11 +27,8 @@ import com.badlogic.gdx.math.Rectangle;
  */
 public class Block {
 
-	// possible block colours
-	final static String[] colours = {"GREEN", "RED", "YELLOW", "PINK", "BLUE"};
-	
 	// the colour of the block
-	String colour;
+	COLOURS colour;
 	
 	// rectangle for rendering purposes
 	Rectangle rectangle;
@@ -59,15 +56,14 @@ public class Block {
 		rectangle.height = blockSize;
 		
 		// set colour to a random colour from the colours
-		int c = (int)(Math.random() * colours.length);
-		colour = colours[c];
+		int c = (int)(Math.random() * 5);
+		colour = COLOURS.values()[c];
 	}
 	
 	// overloaded constructor to create a block of a certain colour
 	// also used to create super blocks
-	public Block(String colour) {
+	public Block(COLOURS colour) {
 		this();
-		
 		this.colour = colour;
 	}
 	
@@ -86,7 +82,7 @@ public class Block {
 		return rectangle;
 	}
 	
-	public String getColour() {
+	public COLOURS getColour() {
 		return colour;
 	}
 	

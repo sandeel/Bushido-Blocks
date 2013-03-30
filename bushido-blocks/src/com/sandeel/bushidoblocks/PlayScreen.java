@@ -22,7 +22,6 @@ package com.sandeel.bushidoblocks;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
-import java.util.LinkedList;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.audio.Music;
@@ -88,6 +87,8 @@ public class PlayScreen implements Screen {
 
     boolean paused;
 
+    private Texture[] blockImages;
+
     /**
      * @param game
      */
@@ -109,6 +110,17 @@ public class PlayScreen implements Screen {
         blockImageSuperHorizontal = new Texture(Gdx.files.internal("super_horizontal.png"));
         blockImageSuperVertical = new Texture(Gdx.files.internal("super_vertical.png"));
         blockImageSuper2Ways = new Texture(Gdx.files.internal("super_2ways.png"));
+
+        blockImages = new Texture[] {
+            blockImageGreen,
+            blockImageRed,
+            blockImageYellow,
+            blockImagePink,
+            blockImageBlue,
+            blockImageSuperHorizontal,
+            blockImageSuperVertical,
+            blockImageSuper2Ways
+        };
 
         background = new Texture(Gdx.files.internal("sky.png"));
 
@@ -215,23 +227,7 @@ public class PlayScreen implements Screen {
                     }
 
                     if (space.hasBlock()) {
-                        if (space.getBlock().getColour().equals("GREEN")) {
-                            blockPointer = blockImageGreen;
-                        } else if (space.getBlock().getColour().equals("RED")) {
-                            blockPointer = blockImageRed;
-                        } else if (space.getBlock().getColour().equals("YELLOW")) {
-                            blockPointer = blockImageYellow;
-                        } else if (space.getBlock().getColour().equals("PINK")) {
-                            blockPointer = blockImagePink;
-                        } else if (space.getBlock().getColour().equals("BLUE")) {
-                            blockPointer = blockImageBlue;
-                        } else if (space.getBlock().getColour().equals("SUPER_HORIZONTAL")) {
-                            blockPointer = blockImageSuperHorizontal;
-                        } else if (space.getBlock().getColour().equals("SUPER_VERTICAL")) {
-                            blockPointer = blockImageSuperVertical;
-                        } else if (space.getBlock().getColour().equals("SUPER_2WAYS")) {
-                            blockPointer = blockImageSuper2Ways;
-                        }
+                        blockPointer = blockImages[space.getBlock().getColour().ordinal()];
 
                         //update block
                         space.getBlock().update();
@@ -252,7 +248,7 @@ public class PlayScreen implements Screen {
                     * get out of jail card!!
                     */
                    if (!hasSuperBlock && grid.countEmptySpaces() == 1 && !grid.hasMatch()) {
-                       space.spawnBlock("SUPER_2WAYS");
+                       space.spawnBlock(COLOURS.SUPER_2WAYS);
                    }
                    // chance of super block if none on table
                    else if (!hasSuperBlock) {
@@ -264,7 +260,7 @@ public class PlayScreen implements Screen {
                                 if (!space.hasGridSpaceBelow()
                                         || !space.hasGridSpaceLeft()
                                         || !space.hasGridSpaceRight()) {
-                                    space.spawnBlock("SUPER_2WAYS");
+                                    space.spawnBlock(COLOURS.SUPER_2WAYS);
                                 } else {
                                     space.spawnSuperBlock();
                                 }
@@ -303,7 +299,7 @@ public class PlayScreen implements Screen {
                       if(space.hasBlock() && space.getBlock().getRectangle().contains(touchPos.x, touchPos.y)) {
 
                           /* handle super blocks */
-                          if (space.getBlock().getColour().equals("SUPER_HORIZONTAL")) {
+                          if (space.getBlock().getColour() == COLOURS.SUPER_HORIZONTAL) {
                               if (prefs.getBoolean("soundOn") == true) {
                                   crack.play();
                               }
@@ -311,7 +307,7 @@ public class PlayScreen implements Screen {
                               for (GridSpace targetSpace : grid.getRow(space.getY())) {
                                   targetSpace.deleteBlock();
                               }
-                          } else if (space.getBlock().getColour().equals("SUPER_VERTICAL")) {
+                          } else if (space.getBlock().getColour() == COLOURS.SUPER_VERTICAL) {
                               if (prefs.getBoolean("soundOn") == true) {
                                   crack.play();
                               }
@@ -319,7 +315,7 @@ public class PlayScreen implements Screen {
                               for (GridSpace targetSpace : grid.getColumn(space.getX())) {
                                   targetSpace.deleteBlock();
                               }
-                          } else if (space.getBlock().getColour().equals("SUPER_2WAYS")) {
+                          } else if (space.getBlock().getColour() == COLOURS.SUPER_2WAYS) {
                               if (prefs.getBoolean("soundOn") == true) {
                                   crack.play();
                                   }

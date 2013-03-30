@@ -91,7 +91,7 @@ public class GridSpace {
 	/*
 	 * spawn a specific block on the space
 	 */
-	public void spawnBlock(String type) {
+	public void spawnBlock(COLOURS type) {
 		setBlock(new Block(type));
 	}
 	
@@ -99,14 +99,14 @@ public class GridSpace {
 	 * spawn a random super block on the space
 	 */
 	public void spawnSuperBlock() {
-		String colour = "";
+		COLOURS colour = COLOURS.SUPER_2WAYS;
 		int c = (int)(Math.random() * 3);
 		if (c == 0) {
-			colour = "SUPER_HORIZONTAL";
+			colour = COLOURS.SUPER_HORIZONTAL;
 		} else if (c == 1) {
-			colour = "SUPER_VERTICAL";
+			colour = COLOURS.SUPER_VERTICAL;
 		} else if (c == 2) {
-			colour = "SUPER_2WAYS";
+			colour = COLOURS.SUPER_2WAYS;
 		}
 		setBlock(new Block(colour));
 	}
