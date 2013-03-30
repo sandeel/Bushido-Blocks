@@ -22,7 +22,6 @@ package com.sandeel.bushidoblocks;
 import java.util.Iterator;
 import java.util.List;
 import java.util.LinkedList;
-
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.audio.Music;

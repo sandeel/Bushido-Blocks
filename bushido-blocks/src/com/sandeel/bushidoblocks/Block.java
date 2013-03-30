@@ -42,6 +42,9 @@ public class Block {
 	// the yoffset is used to simulate a block falling into place
 	// causes block to be rendered above it's actual location
 	int yOffset;
+
+    // gravity
+    private static final int GRAVITY = 35;
 	
 	public Block() {
 		// set up the blocks rectangle and initial size
@@ -72,7 +75,7 @@ public class Block {
 	// used to apply gravity to the yOffset
 	public void update() {
 		if (yOffset > 0) {
-			yOffset -= 35;
+			yOffset -= GRAVITY;
 		}
 		if (yOffset < 0) {
 			yOffset = 0;
