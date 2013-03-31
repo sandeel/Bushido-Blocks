@@ -1,20 +1,20 @@
 /*
-	Copyright © 2012 Sandeel Software
+    Copyright © 2012 Sandeel Software
 
-	This file is part of Bushido Blocks.
+    This file is part of Bushido Blocks.
 
-	Bushido Blocks is free software: you can redistribute it and/or modify
-	it under the terms of the GNU General Public License as published by
-	the Free Software Foundation, either version 3 of the License, or
-	(at your option) any later version.
+    Bushido Blocks is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
 
-	This program is distributed in the hope that it will be useful,
-	but WITHOUT ANY WARRANTY; without even the implied warranty of
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	GNU General Public License for more details.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
 
-	You should have received a copy of the GNU General Public License
-	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 package com.sandeel.bushidoblocks;
@@ -29,28 +29,36 @@ import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 
 public class SplashScreen implements Screen {
+    // the main application
+    private BushidoBlocks game;
 
-	private BushidoBlocks game;
-	private Stage stage;
-	private Image splashImage;
-	private GameTimer timer;
+    // Scene2d stage
+    private Stage stage;
 
-	public SplashScreen(BushidoBlocks game) {
-		this.game = game;
-		this.stage = new Stage(480,800,false);
+    // sandeel logo
+    private Image splashImage;  
 
-		Texture splashTexture = new Texture(Gdx.files.internal("splash.png"));
-		splashImage = new Image(splashTexture);
-		splashImage.addAction(Actions.fadeIn( 0.5f ));
-		stage.addActor(splashImage);
+    // for timing out the logo
+    private GameTimer timer;
 
-		timer = new GameTimer(4000);
-		timer.start();
-	}
+    public SplashScreen(BushidoBlocks game) {
+        this.game = game;
+        this.stage = new Stage(480,800,false);
 
-	@Override
-	public void render(float delta) {
-        // the following code clears the screen with the given RGB color (black)
+        // create the logo
+        Texture splashTexture = new Texture(Gdx.files.internal("splash.png"));
+        splashImage = new Image(splashTexture);
+        splashImage.addAction(Actions.fadeIn( 0.5f ));
+        stage.addActor(splashImage);
+
+        // time 4 seconds
+        timer = new GameTimer(4000);
+        timer.start();
+    }
+
+    @Override
+    public void render(float delta) {
+        // clear the screen with the given RGB color (black)
         Gdx.gl.glClearColor( 0f, 0f, 0f, 1f );
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT );
 
@@ -58,53 +66,47 @@ public class SplashScreen implements Screen {
         stage.act(Gdx.graphics.getDeltaTime());
         stage.draw();
 
+        // skip if screen touched (or clicked)
         if(Gdx.input.justTouched() || timer.getTimeRemaining() <= 0) {
-        	fadeOut();
+            fadeOut();
         }
-	}
+    }
 
-	public void fadeOut () {
-    	splashImage.addAction(Actions.sequence( Actions.fadeOut( 0.5f ),  new Action() {
-    		  public boolean act(float delta) {
-    			   game.setScreen(new MainMenuScreen(game));
-    			   return true; // returning true consumes the event
-    		  } } ) );
-	}
+    /*
+     * darken the image and go to next main menu
+     */
+    public void fadeOut () {
+        splashImage.addAction(Actions.sequence( Actions.fadeOut( 0.5f ),  new Action() {
+              public boolean act(float delta) {
+                   game.setScreen(new MainMenuScreen(game));
+                   return true; // returning true consumes the event
+              }
+        }));
+    }
 
-	@Override
-	public void resize(int width, int height) {
-		// TODO Auto-generated method stub
+    @Override
+    public void resize(int width, int height) {
+    }
 
-	}
+    @Override
+    public void show() {
+    }
 
-	@Override
-	public void show() {
-		// TODO Auto-generated method stub
+    @Override
+    public void hide() {
+    }
 
-	}
+    @Override
+    public void pause() {
+    }
 
-	@Override
-	public void hide() {
-		// TODO Auto-generated method stub
+    @Override
+    public void resume() {
+    }
 
-	}
-
-	@Override
-	public void pause() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void resume() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void dispose() {
-		// TODO Auto-generated method stub
-
-	}
-
+    @Override
+    public void dispose() {
+        stage.dispose();
+    }
 }
+
