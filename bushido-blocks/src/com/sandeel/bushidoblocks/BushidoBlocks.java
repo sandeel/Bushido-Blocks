@@ -1,9 +1,9 @@
 /*
-	Copyright © 2012 Sandeel Software
-	
-	This file is part of Bushido Blocks.
-	    
-	Bushido Blocks is free software: you can redistribute it and/or modify
+    Copyright © 2012 Sandeel Software
+    
+    This file is part of Bushido Blocks.
+        
+    Bushido Blocks is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
@@ -23,32 +23,32 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.ApplicationListener;
 
 public class BushidoBlocks extends Game implements ApplicationListener  {
-	
-    ActionResolver actionResolver;
-	
-	private Leaderboard leaderboard;
-	
-	public BushidoBlocks(Leaderboard leaderboard, ActionResolver ar) {
-		this.leaderboard = leaderboard;
+    
+    private ActionResolver actionResolver; // for platform-specific actions
+    private Leaderboard leaderboard; // for Swarm leaderboard on Android
+    
+    public BushidoBlocks(Leaderboard leaderboard, ActionResolver ar) {
+        this.leaderboard = leaderboard;
         this.actionResolver = ar;
-	};
-	
-	@Override
-	public void create() {	
-		// load the first screen - the main menu
-		setScreen(new SplashScreen(this));
-	}
+    };
+    
+    @Override
+    public void create() {  
+        // load the first screen - the splash screen
+        setScreen(new SplashScreen(this));
+    }
 
-	@Override
-	public void dispose() {
-		super.dispose();
-	}
-	
-	public Leaderboard getLeaderboard() {
-		return leaderboard;
-	}
-	
-	public ActionResolver getActionResolver() {
-		return actionResolver;
-	}
+    @Override
+    public void dispose() {
+        super.dispose();
+    }
+    
+    public Leaderboard getLeaderboard() {
+        return leaderboard;
+    }
+    
+    public ActionResolver getActionResolver() {
+        return actionResolver;
+    }
 }
+
