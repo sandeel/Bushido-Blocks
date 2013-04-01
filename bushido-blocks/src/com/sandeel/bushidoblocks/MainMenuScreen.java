@@ -240,6 +240,7 @@ public class MainMenuScreen implements Screen {
 
         // rendering
         batch.begin();
+
         // draw background
         batch.draw(background, 0, 0);
         batch.end();

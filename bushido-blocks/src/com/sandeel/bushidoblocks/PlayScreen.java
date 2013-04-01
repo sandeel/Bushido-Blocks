@@ -44,127 +44,125 @@ import com.badlogic.gdx.Preferences;
  * the main gameplay screen
  */
 public class PlayScreen implements Screen {
-    BushidoBlocks game;
-    Stage stage;
+    //reference to the application
+    private BushidoBlocks game;
 
-    Texture blockImageGreen;
-    Texture blockImageRed;
-    Texture blockImageYellow;
-    Texture blockImagePink;
-    Texture blockImageBlue;
-    Texture blockImageSuperHorizontal;
-    Texture blockImageSuperVertical;
-    Texture blockImageSuper2Ways;
-    Texture blockPointer;
+    //Scene2d stage
+    private Stage stage;
 
-    Texture background;
+    //background image for behind the blocks
+    private Texture background;
 
-    Music music;
+    //background song
+    private Music music;
 
-    Sound whoosh;
-    Sound crack;
+    //sound effects
+    private Sound whoosh;
+    private Sound crack;
 
-    BitmapFont font;
-    BitmapFont numbersFont;
-    BitmapFont scoreFont;
-    BitmapFont scorePopupFont;
+    //fonts
+    private BitmapFont font;
+    private BitmapFont numbersFont;
+    private BitmapFont scoreFont;
+    private BitmapFont scorePopupFont;
 
-    GameTimer timer;
+    //countdown
+    private GameTimer timer;
 
-    OrthographicCamera camera;
-    SpriteBatch batch;
-    Grid grid;
+    private OrthographicCamera camera;
+    private SpriteBatch batch;
 
-    int points;
+    //grid the blocks go on
+    private Grid grid;
 
-    Preferences prefs;
+    //the player's points/score
+    private int points;
 
-    GridSpace space;
-    List<GridSpace> gridSpaces;
-    Iterator<GridSpace> it;
+    //game preferences
+    private Preferences prefs;
 
-    LabelStyle labelStyle;
+    private GridSpace space;
+    private List<GridSpace> gridSpaces;
+    private Iterator<GridSpace> it;
 
-    boolean paused;
+    //style for the labels (score etc.)
+    private LabelStyle labelStyle;
 
+    //is the game paused (used when starting game)
+    private boolean paused;
+
+    //coloured block images
     private Texture[] blockImages;
 
-    /**
-     * @param game
-     */
+    //points to a block texture
+    private Texture blockPointer;
+
     public PlayScreen (BushidoBlocks game) {
         this.game = game;
-
         stage = new Stage(480, 800, false);
-
-        paused = true;
-
+        
+        //back key shouldn't exit app here
         Gdx.input.setCatchBackKey(true);
 
-        /* load the images */
-        blockImageGreen = new Texture(Gdx.files.internal("GREEN.png"));
-        blockImageRed = new Texture(Gdx.files.internal("RED.png"));
-        blockImageYellow = new Texture(Gdx.files.internal("YELLOW.png"));
-        blockImagePink = new Texture(Gdx.files.internal("PINK.png"));
-        blockImageBlue = new Texture(Gdx.files.internal("BLUE.png"));
-        blockImageSuperHorizontal = new Texture(Gdx.files.internal("super_horizontal.png"));
-        blockImageSuperVertical = new Texture(Gdx.files.internal("super_vertical.png"));
-        blockImageSuper2Ways = new Texture(Gdx.files.internal("super_2ways.png"));
+        //preferences
+        prefs = Gdx.app.getPreferences("My Preferences");
 
+        //pause the game intially until player touches screen
+        paused = true;
+
+        //load the images
+        background = new Texture(Gdx.files.internal("sky.png"));
         blockImages = new Texture[] {
-            blockImageGreen,
-            blockImageRed,
-            blockImageYellow,
-            blockImagePink,
-            blockImageBlue,
-            blockImageSuperHorizontal,
-            blockImageSuperVertical,
-            blockImageSuper2Ways
+            new Texture(Gdx.files.internal("GREEN.png")),
+            new Texture(Gdx.files.internal("RED.png")),
+            new Texture(Gdx.files.internal("YELLOW.png")),
+            new Texture(Gdx.files.internal("PINK.png")),
+            new Texture(Gdx.files.internal("BLUE.png")),
+            new Texture(Gdx.files.internal("super_horizontal.png")),
+            new Texture(Gdx.files.internal("super_vertical.png")),
+            new Texture(Gdx.files.internal("super_2ways.png"))
         };
 
-        background = new Texture(Gdx.files.internal("sky.png"));
-
-        /* font */
+        //font
         font = new BitmapFont(Gdx.files.internal("data/nuku.fnt"), Gdx.files.internal("data/nuku.png"), false);
         numbersFont = new BitmapFont(Gdx.files.internal("data/countdown.fnt"), Gdx.files.internal("data/countdown.png"), false);
         scoreFont = new BitmapFont(Gdx.files.internal("data/score.fnt"), Gdx.files.internal("data/score.png"), false);
         scorePopupFont = new BitmapFont(Gdx.files.internal("data/score_popup.fnt"), Gdx.files.internal("data/score_popup.png"), false);
 
+        //style
         com.badlogic.gdx.graphics.Color color = new com.badlogic.gdx.graphics.Color(255f, 255f, 255f, 50);
         labelStyle = new LabelStyle(scorePopupFont, color);
 
-        /* sound effects */
+        //sound effects
         whoosh = Gdx.audio.newSound(Gdx.files.internal("whoosh.wav"));
         crack = Gdx.audio.newSound(Gdx.files.internal("crack.wav"));
 
-        /* music */
-        music = Gdx.audio.newMusic(Gdx.files.internal("crystals.ogg"));
-
-        /* preferences */
-        prefs = Gdx.app.getPreferences("My Preferences");
-
-        // play music if setting turned on
-        music.setLooping(true);
+        //music (not loaded unless sound turned on!!)
         if (prefs.getBoolean("musicOn") == true) {
+            music = Gdx.audio.newMusic(Gdx.files.internal("crystals.ogg"));
+        }
+        
+        System.err.println("here");
+
+        //play music if setting turned on
+        if (prefs.getBoolean("musicOn") == true) {
+            music.setLooping(true);
             music.play();
         }
 
-        /* the rendering stuff */
+        //the rendering stuff
         camera = new OrthographicCamera();
         camera.setToOrtho(false, 480, 800);
         batch = new SpriteBatch();
 
-        /* the grid for the blocks */
+        //the grid for the blocks
         grid = new Grid();
 
-        /* set initial points to 0 */
+        //set initial points to 0
         points = 0;
 
-        /* start timer */
+        //load timer
         timer = new GameTimer(60000);
-
-        gridSpaces = grid.getSpaces();
-        it = gridSpaces.iterator();
 
         Gdx.input.setCatchBackKey(true);
 
@@ -172,18 +170,17 @@ public class PlayScreen implements Screen {
         Gdx.input.setInputProcessor(inputProcessor);
     }
 
-    public void draw (float deltaTime) {
-    }
-
     @Override
     public void render (float delta) {
            Gdx.gl.glClearColor(0, 0, 0.2f, 1);
            Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
 
-           /* if out of time */
+           //if out of time
            if (timer.getTimeRemaining() <= 0) {
 
                music.stop();
+
+               //save the score
                prefs.putInteger("lastScore", points);
                prefs.flush();
 
@@ -197,25 +194,23 @@ public class PlayScreen implements Screen {
            }
 
            camera.update();
-
            batch.setProjectionMatrix(camera.combined);
-
            batch.begin();
 
            //draw background
            batch.draw(background, 0, 0);
 
-           /* display remaining time */
+           //display remaining time
            font.draw(batch, "time", 60, (800 - 100));
            numbersFont.draw(batch, String.valueOf(timer.getTimeRemainingInSeconds()), 80, (800 - 150));
 
-           /* display points */
+           //display score
            font.draw(batch, "score", (480 - 180), (800 - 100));
            scoreFont.draw(batch, String.valueOf(points), (480 - 170), (800 - 150));
 
            gridSpaces = grid.getSpaces();
            it = gridSpaces.iterator();
-           //Collections.shuffle(gridSpaces);
+
            while(it.hasNext()) {
                     space = it.next();
 
@@ -412,14 +407,10 @@ public class PlayScreen implements Screen {
         crack.stop();
         crack.dispose();
 
-        blockImageGreen.dispose();
-        blockImageRed.dispose();
-        blockImageYellow.dispose();
-        blockImagePink.dispose();
-        blockImageBlue.dispose();
-        blockImageSuperHorizontal.dispose();
-        blockImageSuperVertical.dispose();
-        blockImageSuper2Ways.dispose();
+        // dispose of all the images in blockImage array
+        for (Texture blockImage : blockImages) {
+            blockImage.dispose();
+        }
 
         font.dispose();
         numbersFont.dispose();
