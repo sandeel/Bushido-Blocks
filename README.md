@@ -17,5 +17,5 @@ http://www.professorkliq.com/
 * Leaderboards via Swarm http://swarmconnect.com/
 
 ##Licenses
-*Code: http://www.gnu.org/licenses/gpl.html
-*Music: CC BY SA http://creativecommons.org/licenses/by-sa/2.0/
+* Code: http://www.gnu.org/licenses/gpl.html
+* Music: CC BY SA http://creativecommons.org/licenses/by-sa/2.0/
